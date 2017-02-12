@@ -36,11 +36,11 @@ internetQuotes = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /beer/i, (msg) ->
+  robot.hear /\bbeer\b/i, (msg) ->
     msg.send msg.random beerQuotes
-  robot.hear /bacon|bagel|barbecue|burger|candy|chocolate|donut|sandwich|breakfast|lunch|dinner|food|grub|malort|taco|cake|curry/i, (msg) ->
+  robot.hear /\b(bacon|bagel|barbecue|burger|candy|chocolate|donut|sandwich|breakfast|lunch|dinner|food|grub|malort|taco|cake|curry)\b/i, (msg) ->
     msg.send "Mmmm... " + msg.match[0]
   robot.hear /\btry\b/i, (msg) ->
     msg.send msg.random tryQuotes
-  robot.hear /internet/i, (msg) ->  
+  robot.hear /\binternet\b/i, (msg) ->  
     msg.send msg.random internetQuotes

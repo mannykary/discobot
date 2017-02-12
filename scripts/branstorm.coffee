@@ -52,7 +52,7 @@ simpsons = [
 
 module.exports = (robot) ->
   # Disco ball!
-  robot.hear /disco form|disco/i, (res) ->
+  robot.hear /disco form|\bdisco\b/i, (res) ->
     res.send "https://circa71.files.wordpress.com/2012/02/discoball3-1.gif"
   # Disco Inferno!!
   robot.hear /disco inferno/i, (res) ->
@@ -60,7 +60,7 @@ module.exports = (robot) ->
     res.send "http://i.imgur.com/ac98Olx.jpg"
     res.send "https://www.youtube.com/watch?v=A_sY2rjxq6M"
   # Random AI pics
-  robot.hear /practice/i, (res) ->
+  robot.hear /\bpractice\b/i, (res) ->
     res.send "Practice?"
     res.send res.random practice
   # Local Man Ruins Everything picture
@@ -91,21 +91,10 @@ module.exports = (robot) ->
   robot.hear /the truth/i, (res) ->
     res.send "I want to believe."
     res.send "https://i.imgur.com/2jsfax6.jpg"
-  # Cell wall.
-  robot.hear /cell wall/i, (res) ->
-    res.send "http://i.imgur.com/olWwOqG.jpg"
-  # Dude who microwaved cup of ramen without water
-  robot.hear /small mistake/i, (res) ->
-    res.send "http://i.imgur.com/qjujW6d.png"
   # Xzibit - if string contains "put a [word] in your [word]", show image of Xzibit.
   robot.hear /put a (.*) in your (.*)/i, (res) ->
     res.send "http://www.reactionface.info/sites/default/files/images/1310428349083_0.png"
   # Ludacris - STAND UP!
-  robot.hear /(standup|stand up|stand-up)/i, (res) ->
+  robot.hear /(\bstandup\b)/i, (res) ->
     res.send "When I move, you move (just like that)"
     res.send "https://j.gifs.com/ADY99l.gif"
-  # Thank the maker!
-  robot.hear /(\bjoe\b|\bekiert\b|\bsmokinjoe\b)/i, (res) ->
-    res.send "Thank the maker!"
-    res.send "http://img.gawkerassets.com/img/17dz18u6h2n70jpg/original.jpg"
-    res.send "https://github.com/smokinjoe"
